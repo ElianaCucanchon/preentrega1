@@ -1,5 +1,7 @@
 
 
+
+
 const SI = 'SI';
 const NO = 'NO';
 const MULTIPLICAR = 'MULTIPLICAR';
@@ -14,15 +16,16 @@ let nombreOperacion;
 
 
 nombre = prompt('Gracias por Venir a nuestra calculadora. Bienvenido!\n Ingrese su nombre: ') ;
-nombreOperacion = prompt(`${nombre}, Porfavor elija si multiplicar, restar o sumar?` .toLowerCase());
+nombreOperacion = prompt(`${nombre}, Indica que operacion te gustaria realizar, multiplicar, sumar o restar?`) .toLowerCase();
 
+if(nombreOperacion =="multiplicar" ){
+   
+   do{
 
-    
-   do if(nombreOperacion == MULTIPLICAR){
-
-        let numero = prompt(`${nombre}, Ingrese el numero que desea multiplicar`);
+        let numero = prompt(`${nombre}, Ingrese el numero que desea multiplicar hasta 12`);
         for (let i = 0; i <= 12; i++) {
             alert(`${numero} x ${i} = ${numero * i}`)
+
     
         }
 
@@ -30,42 +33,39 @@ nombreOperacion = prompt(`${nombre}, Porfavor elija si multiplicar, restar o sum
     
     } while (continuar === 'si');
 
-    
+} 
 
-    do if (nombreOperacion ==  SUMAR){
-        const num1 = prompt("Ingrese el primer valor");
-        const num2 = prompt("Ingrese el segundo valor");
+if(nombreOperacion == "sumar"){
+    do{
+        const num1 = prompt("Ingrese el primer valor a sumar");
+        const num2 = prompt("Ingrese el segundo valor a sumar");
         alert(+num1 + +num2);
 
         continuar = prompt('Desea volver a sumar otros numeros? si/no').toLowerCase();
-    } while (continuar == 'si');
+    } while (continuar ==='si');
 
-    do if (nombreOperacion == RESTAR) {
-        const num3 = prompt("Ingrese el primer valor");
+}
+
+if(nombreOperacion == "restar"){
+
+    do {
+        const num3 = prompt("Ingrese el primer valor a restar");
         const num4 = prompt("Ingrese el segundo valor");
         alert(num3 - num4);
         continuar = prompt('Desea volver a restar otros numeros? si/no').toLowerCase();
     
     } while (continuar === 'si');
-
-
-    
     
 
-   
+}
 
 
+if (continuar ==='no'){
 
+    alert(` ${nombre} Gracias por visitarnos`);
+}
 
+if(nombreOperacion == ""){
 
-
-
-
-
-
-
-
-
-
-
-
+    alert(` ${nombre} Intentalo de nuevo, ingresa un valor valido!`);
+}
